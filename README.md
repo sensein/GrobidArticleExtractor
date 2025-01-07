@@ -154,4 +154,4 @@ Feel free to submit issues and enhancement requests!
 
 ## License
 
-Apache License
+MIT License
