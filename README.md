@@ -12,11 +12,26 @@ to extract both metadata and content from academic papers and other structured d
 ## Prerequisites
 
 1. Install GROBID:
-   ```bash
-   # Using Docker (recommended)
-   docker pull lfoppiano/grobid:0.7.3
-   docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.3
+
+   ```bash 
+   docker pull lfoppiano/grobid:0.8.0
+   docker run --init -p 8070:8070 -e JAVA_OPTS="-XX:+UseZGC" lfoppiano/grobid:0.8.0
    ```
+   `JAVA_OPTS="-XX:+UseZGC"` helps to resolve the following error in mac os.
+    ```bash
+    [thread 44 also had an error]
+    
+    A fatal error has been detected by the Java Runtime Environment:
+    
+    SIGSEGV (0xb) at pc=0x00007ffffef8ad07, pid=8, tid=47
+    
+    JRE version: OpenJDK Runtime Environment (17.0.2+8) (build 17.0.2+8-86)
+    Java VM: OpenJDK 64-Bit Server VM (17.0.2+8-86, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, linux-amd64)
+    Problematic frame:
+    [thread 41 also had an error]
+    [thread 45 also had an error]
+    [thread 46 also had an error]
+    ```
 
 2. Install Python dependencies:
    ```bash
