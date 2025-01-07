@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "GrobidArticleExtractor"
-version = "0.2.0"
+version = "0.7.0"
 description = "GrobidArticleExtractor is a Python package designed to extract and organize content from scientific papers in PDF format."
 authors = [
   "tekrajchhetri <tekrajchhetri@gmail.com>",
@@ -8,7 +8,7 @@ authors = [
 maintainers = [
   "tekrajchhetri <tekrajchhetri@gmail.com>",
 ]
-license = "Apache-2.0"
+license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/sensein/GrobidArticleExtractor"
 repository = "https://github.com/sensein/GrobidArticleExtractor"
@@ -101,7 +101,7 @@ convention = "google"
 "src/tests/**/*.py" = []
 
 [tool.poetry.scripts]
-GrobidArticleExtractor-cli = "GrobidArticleExtractor.cli:main"
+grobidextractor = "GrobidArticleExtractor.cli:main"
 
 [tool.ruff.format]
 quote-style = "double"

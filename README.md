@@ -33,12 +33,25 @@ to extract both metadata and content from academic papers and other structured d
     [thread 46 also had an error]
     ```
 
-2. Install Python dependencies:
-   ```bash
-    pip install poetry
+2. Installation :
+
+   Install this package via :
+
+   ```sh
+   pip install GrobidArticleExtractor
    ```
-   ```bash
-    poetry install
+
+   Or get the newest development version via:
+
+   ```sh
+   pip install git+https://github.com/sensein/GrobidArticleExtractor.git
+   ```
+
+   Note: If upgrading from a previous version, you may need to reinstall the package to ensure the CLI command is
+   properly installed:
+   ```sh
+   pip uninstall GrobidArticleExtractor
+   pip install GrobidArticleExtractor
    ```
 
 ## Usage
@@ -49,23 +62,23 @@ The tool provides a user-friendly command-line interface for batch processing PD
 
 ```bash
 # Basic usage (processes PDFs from 'pdfs' directory)
-python cli.py
+grobidextractor
 
 # Process PDFs from a specific directory
-python cli.py path/to/pdfs
+grobidextractor path/to/pdfs
 
 # Specify custom output directory
-python cli.py path/to/pdfs -o path/to/output
+grobidextractor path/to/pdfs -o path/to/output
 
 # Use custom GROBID server and disable content preview
-python cli.py path/to/pdfs --grobid-url http://custom:8070 --no-preview
+grobidextractor path/to/pdfs --grobid-url http://custom:8070 --no-preview
 ```
 
 Available options:
 
 ```bash
-$ python cli.py --help
-Usage: cli.py [OPTIONS] [INPUT_FOLDER]
+$ grobidextractor --help
+Usage: grobidextractor [OPTIONS] [INPUT_FOLDER]  
 
   Process PDF files from INPUT_FOLDER and extract their content using GROBID.
 
@@ -80,7 +93,7 @@ Options:
   --help                Show this message and exit.
 
 Example:
-  python cli.py path/to/pdfs -o path/to/output
+  grobidextractor path/to/pdfs -o path/to/output
 ```
 
 ### Python API Usage
@@ -88,7 +101,7 @@ Example:
 You can also use the tool programmatically in your Python code:
 
 ```python
-from GrobidArticleExtractor import GrobidArticleExtractor
+from GrobidArticleExtractor.app import GrobidArticleExtractor
 
 # Initialize extractor (default GROBID URL: http://localhost:8070)
 extractor = GrobidArticleExtractor()
