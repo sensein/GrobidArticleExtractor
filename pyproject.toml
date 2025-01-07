@@ -1,18 +1,18 @@
 [tool.poetry]
-name = "YOUR_PACKAGE_NAME"
+name = "GrobidArticleExtractor"
 version = "0.0.1"
-description = "YOUR_PACKAGE_NAME is a Python package for doing incredible stuff."
+description = "GrobidArticleExtractor is a Python package designed to extract and organize content from scientific papers in PDF format."
 authors = [
-    "YOUR_GITHUB_NICKNAME <YOUR_EMAIL>",
+  "tekrajchhetri <tekrajchhetri@gmail.com>",
 ]
 maintainers = [
-    "YOUR_GITHUB_NICKNAME <YOUR_EMAIL>",
+  "tekrajchhetri <tekrajchhetri@gmail.com>",
 ]
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "YOUR_PACKAGE_REPO"
-repository = "YOUR_PACKAGE_REPO"
-documentation = "https://YOUR_GITHUB_NICKNAME.github.io/YOUR_PACKAGE_NAME"
+homepage = "https://github.com/sensein/GrobidArticleExtractor"
+repository = "https://github.com/sensein/GrobidArticleExtractor"
+documentation = "https://tekrajchhetri.github.io/GrobidArticleExtractor"
 keywords = ["python", "package", "template"]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -20,11 +20,15 @@ classifiers = [
   "License :: OSI Approved :: Apache Software License",
   "Operating System :: OS Independent"
 ]
-packages = [{include = "YOUR_PACKAGE_NAME", from = "src"}]
+packages = [{ include = "GrobidArticleExtractor", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.7"
+requests = "^2.32.3"
+pathlib = "^1.0.1"
+lxml = "^5.3.0"
+pytest = "^8.3.4"
 
 [tool.poetry.group.dev]
 optional = true
@@ -97,7 +101,7 @@ convention = "google"
 "src/tests/**/*.py" = []
 
 [tool.poetry.scripts]
-YOUR_PACKAGE_NAME-cli = "YOUR_PACKAGE_NAME.cli:main"
+GrobidArticleExtractor-cli = "GrobidArticleExtractor.cli:main"
 
 [tool.ruff.format]
 quote-style = "double"
