@@ -16,7 +16,10 @@
 # @Software: PyCharm
 
 import click
+from pathlib import Path
+
 from .app import GrobidArticleExtractor
+
 
 @click.command()
 @click.argument('input_folder', type=click.Path(exists=True, file_okay=False, dir_okay=True), default='pdfs')
@@ -33,7 +36,7 @@ def main(input_folder, output_dir, grobid_url, preview):
     Each JSON file is named after its source PDF file.
 
     Example:
-        python grobid_pdf_extractor.py path/to/pdfs -o path/to/output
+        grobidextractor path/to/pdfs -o path/to/output
     """
     input_folder = Path(input_folder)
     output_dir = Path(output_dir)
@@ -85,4 +88,3 @@ def main(input_folder, output_dir, grobid_url, preview):
 
 if __name__ == "__main__":
     main()  # pylint: disable=no-value-for-parameter
-
