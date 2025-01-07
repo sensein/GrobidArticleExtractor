@@ -73,7 +73,7 @@ Example:
 You can also use the tool programmatically in your Python code:
 
 ```python
-from app import GrobidArticleExtractor
+from GrobidArticleExtractor import GrobidArticleExtractor
 
 # Initialize extractor (default GROBID URL: http://localhost:8070)
 extractor = GrobidArticleExtractor()
