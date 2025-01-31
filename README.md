@@ -128,6 +128,9 @@ Custom GROBID server:
 ```python
 extractor = GrobidArticleExtractor(grobid_url="http://your-grobid-server:8070")
 ```
+### Example NoteBook
+
+Check out the [example notebook](https://github.com/sensein/GrobidArticleExtractor/blob/dev/examples/example.ipynb)  for a step-by-step guide on how to run it.
 
 ## Output Structure
 
