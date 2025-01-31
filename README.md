@@ -11,7 +11,7 @@ to extract both metadata and content from academic papers and other structured d
 
 ## Prerequisites
 
-1. Install GROBID:
+1. Start GROBID Service:
 
    ```bash 
    docker pull lfoppiano/grobid:0.8.0
