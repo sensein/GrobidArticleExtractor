@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# @Author  : Tek Raj Chhetri
-# @Email   : tekraj@mit.edu
-# @Web     : https://tekrajchhetri.com/
-# @Software: PyCharm
-
 
 from lxml import etree
 from typing import Dict, List, Optional, Union
