@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Author  : Tek Raj Chhetri
-# @Email   : tekraj@mit.edu
-# @Web     : https://tekrajchhetri.com/
-# @Software: PyCharm
-
 import click
 from pathlib import Path
 
