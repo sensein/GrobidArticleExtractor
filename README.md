@@ -1,110 +1,188 @@
-# The Sensein's python package template repo
+# GrobidArticleExtractor
 
-Welcome to the [Sensein](https://sensein.group/) python template repo! 
-This template is here to help you kick off your projects with a clean and efficient setup. 
-It's inspired by the [python template by the Child Mind Institute](https://github.com/childmindresearch/template-python-repository) (thanks you!). Our version diverges in its setup process and in both the variety and quantity of automated features included.
-
-Just follow these steps, and you'll be on your way:
-1. **Choose a unique package name:** First off, you need a cool name for your package. To make sure it's not already taken on PyPI, head over to `https://pypi.org/project/YOUR_PACKAGE_NAME/`. If you get a "Not Found" page, you're likely good to go!
-
-2. **Use this template:** Go to the GitHub page for this template. You'll find a "Use this template" button on the top right. Click it to start setting up your project with the template's structure.
-
-3. **Configure your project:** During the setup, you'll specify some basics like your project's name and whether it's public or private. You will be able to change this info in the future, no pressure!
-
-4. **Add GitHub Secrets:** For automated processes, add these secrets to your GitHub repo:
-
-- `PYPI_TOKEN`: Your token for PyPI, allowing GitHub Actions to publish your package.
-- `AUTO_ORG_TOKEN`: A token for automated organization actions (this is useful for using [auto](https://github.com/intuit/auto) for automatic changelog generation).
-- `CODECOV_TOKEN`: Your [Codecov](https://about.codecov.io/) token for reporting code coverage.
-
-To obtain these tokens:
-- For `PYPI_TOKEN`, log in to your PyPI account, go to your account settings, and create an API token. Alternatively, ask the admin of your organization to do so.
-- `AUTO_ORG_TOKEN` is a personal access token from GitHub, used for actions requiring organization-level permissions. Generate one in your GitHub settings under Developer settings > Personal access tokens. Alternatively, if the repo is under your organization GitHub, please, ask the admin of your organization to provide one.
-- For `CODECOV_TOKEN`, sign up or log in to Codecov, add your repository, and you'll be provided with a token.
-
-To add these tokens:
-Go to your repository on GitHub, click on "Settings" > "Secrets" > "Actions", then click on "New repository secret". Name your secret (e.g., `PYPI_TOKEN`) and paste the token value. Repeat this for each token.
-
-5. **Clone the repo:** Once your repository is set up, clone it to your local machine.
-
-6. **Replace placeholders with custom values**: Please, run `python template_setup.py --package-name YOUR_PACKAGE_NAME --package-repo-without-git-extension YOUR_PACKAGE_REPO --github-nickname YOUR_GITHUB_NICKNAME --codecov-token CODECOV_GRAPHICS_TOKEN --email YOUR_EMAIL`. 
-For example, `python template_setup.py --package-name pipepal --package-repo-without-git-extension https://github.com/fabiocat93/pipepal --github-nickname fabiocat93 --codecov-token IQR1RCYMAA --email fabiocat@mit.edu`. This will replace some placeholders in the entire directory (including folder names, file names, file content) with your custom info:
-- YOUR_PACKAGE_NAME (e.g., `pipepal`)
-- YOUR_PACKAGE_REPO (e.g., `https://github.com/sensein/pipepal`)
-- YOUR_GITHUB_NICKNAME (e.g., `sensein`)
-- CODECOV_GRAPHICS_TOKEN (e.g.,`ABC0DEFGHI`)
-- YOUR_EMAIL (e.g., `sensein@mit.edu`)
-It will also enable GitHub custom automation and delete the `template_setup.py` (you won't need that anymore).
-
-7. **Adjust `pyproject.toml`:** Please, double-check `pyproject.toml` and update it with some custom info, if needed (i.e., `description`, `authors`, `maintainers`, `description`, `homepage`, `repository`, `keywords`, and `classifiers`). No need to touch `version`. This will be automatically handled by the package.
-
-8. **Update README.md:** Replace the content of this README.md with information specific to your project.
-
-9. **Install poetry:** Poetry is a fantastic tool for managing dependencies and packaging. If you haven't installed it yet, check out their [documentation](https://python-poetry.org/docs/) for guidance. It's pretty straightforward.
-
-10. **Verify poetry setup:** Run `poetry --help` to ensure everything is set up correctly. To verify that the project folder is all in order, you can run `poetry check`.
-
-11. **Install dependencies:** Get all your project's dependencies in place by running `poetry install --with dev`.
-
-12. **Secure your package name:** Even if you're not quite ready to publish, consider securing your package name on PyPI. You can do this by publishing a dummy version (0.0.1) of your package with `poetry publish --build`.
-
-13. **Commit and push:** Now's the time to add (e.g., `git add .`) and commit (e.g., `git commit -m "here goes a wonderful message"`) your changes. Consider adding a tag for your initial version (recommended), like `git tag 0.0.1`, then push it all to GitHub with `git push --tags` and `git push origin main`.
-
-14. **Check GitHub actions:** If your push was successful, it'll trigger some GitHub Actions like code quality checks and tests. Make sure everything passes!
-
-15. **Work in dev branch:** For future changes, create a `dev` branch and make your updates there. Use pull requests to merge these changes into the main branch.
-
-16. **Releasing new versions:** If you want to release a new version of your package, add a "release" label to your pull request. This will trigger all the necessary actions to update the version tag, create a changelog, release the new version, and even create/update your package documentation.
-
-17. **Set up API documentation:** After your first successful pull request, set up your API documentation website. Go to your repository's settings, find the GitHub Pages section, and select `docs` as the source. You'll get a link to your API docs.
-
-18. **[Bonus] Customize issue and pull request remplates:** Optionally, you can customize your issue and pull request remplates from the `.github` folder.
-
-That's it! With these steps, you're well on your way to creating an awesome Python package. Keep up the great work, and **happy coding**!
-
-
-# The ```YOUR_PACKAGE_NAME``` repo
-
-[![Build](YOUR_PACKAGE_REPO/actions/workflows/test.yaml/badge.svg?branch=main)](YOUR_PACKAGE_REPO/actions/workflows/test.yaml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/YOUR_GITHUB_NICKNAME/YOUR_PACKAGE_NAME/branch/main/graph/badge.svg?token=CODECOV_GRAPHICS_TOKEN)](https://codecov.io/gh/YOUR_GITHUB_NICKNAME/YOUR_PACKAGE_NAME)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-
-[![PyPI](https://img.shields.io/pypi/v/YOUR_PACKAGE_NAME.svg)](https://pypi.org/project/YOUR_PACKAGE_NAME/)
-[![Python Version](https://img.shields.io/pypi/pyversions/YOUR_PACKAGE_NAME)](https://pypi.org/project/YOUR_PACKAGE_NAME)
-[![License](https://img.shields.io/pypi/l/YOUR_PACKAGE_NAME)](https://opensource.org/licenses/Apache-2.0)
-
-[![pages](https://img.shields.io/badge/api-docs-blue)](https://YOUR_GITHUB_NICKNAME.github.io/YOUR_PACKAGE_NAME)
-
-Welcome to the ```YOUR_PACKAGE_NAME``` repo! This is a Python package for doing incredible stuff.
-
-**Caution:**: this package is still under development and may change rapidly over the next few weeks.
+This Python tool extracts content from PDF files using GROBID and organizes it by sections. It provides a structured way
+to extract both metadata and content from academic papers and other structured documents.
 
 ## Features
-- A few
-- Cool
-- Things
-- These may include a wonderful CLI interface.
 
-## Installation
-Install this package via :
+- Direct PDF processing using GROBID API
+- Metadata extraction (title, authors, abstract, publication date)
+- Hierarchical section organization with subsections
 
-```sh
-pip install YOUR_PACKAGE_NAME
+## Prerequisites
+
+1. Start GROBID Service:
+
+   ```bash 
+   docker pull lfoppiano/grobid:0.8.0
+   docker run --init -p 8070:8070 -e JAVA_OPTS="-XX:+UseZGC" lfoppiano/grobid:0.8.0
+   ```
+   `JAVA_OPTS="-XX:+UseZGC"` helps to resolve the following error in mac os.
+    ```bash
+    [thread 44 also had an error]
+    
+    A fatal error has been detected by the Java Runtime Environment:
+    
+    SIGSEGV (0xb) at pc=0x00007ffffef8ad07, pid=8, tid=47
+    
+    JRE version: OpenJDK Runtime Environment (17.0.2+8) (build 17.0.2+8-86)
+    Java VM: OpenJDK 64-Bit Server VM (17.0.2+8-86, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, parallel gc, linux-amd64)
+    Problematic frame:
+    [thread 41 also had an error]
+    [thread 45 also had an error]
+    [thread 46 also had an error]
+    ```
+
+2. Installation :
+
+   Install this package via :
+
+   ```sh
+   pip install GrobidArticleExtractor
+   ```
+
+   Or get the newest development version via:
+
+   ```sh
+   pip install git+https://github.com/sensein/GrobidArticleExtractor.git
+   ```
+
+   Note: If upgrading from a previous version, you may need to reinstall the package to ensure the CLI command is
+   properly installed:
+   ```sh
+   pip uninstall GrobidArticleExtractor
+   pip install GrobidArticleExtractor
+   ```
+
+## Usage
+
+### Command Line Interface
+
+The tool provides a user-friendly command-line interface for batch processing PDF files:
+
+```bash
+# Basic usage (processes PDFs from 'pdfs' directory)
+grobidextractor
+
+# Process PDFs from a specific directory
+grobidextractor path/to/pdfs
+
+# Specify custom output directory
+grobidextractor path/to/pdfs -o path/to/output
+
+# Use custom GROBID server and disable content preview
+grobidextractor path/to/pdfs --grobid-url http://custom:8070 --no-preview
 ```
 
-Or get the newest development version via:
+Available options:
 
-```sh
-pip install git+YOUR_PACKAGE_REPO.git
+```bash
+$ grobidextractor --help
+Usage: grobidextractor [OPTIONS] [INPUT_FOLDER]  
+
+  Process PDF files from INPUT_FOLDER and extract their content using GROBID.
+
+  The extracted content is saved as JSON files in the output directory.
+  Each JSON file is named after its source PDF file.
+
+Options:
+  -o, --output-dir PATH  Directory to save extracted JSON files (default: output)
+  -g, --grobid-url TEXT  GROBID service URL (default: http://localhost:8070)
+  --preview / --no-preview
+                        Show preview of extracted content (default: True)
+  --help                Show this message and exit.
+
+Example:
+  grobidextractor path/to/pdfs -o path/to/output
 ```
 
-## Quick start
-```Python
-from YOUR_PACKAGE_NAME.app import hello_world
+### Python API Usage
 
-hello_world()
+You can also use the tool programmatically in your Python code:
+
+```python
+from GrobidArticleExtractor.app import GrobidArticleExtractor
+
+# Initialize extractor (default GROBID URL: http://localhost:8070)
+extractor = GrobidArticleExtractor()
+
+# Process a PDF file
+xml_content = extractor.process_pdf("path/to/your/paper.pdf")
+
+if xml_content:
+   # Extract and organize content
+   result = extractor.extract_content(xml_content)
+
+   # Access metadata
+   print(result['metadata'])
+
+   # Access sections
+   for section in result['sections']:
+      print(section['heading'])
+      if 'content' in section:
+         print(section['content'])
 ```
 
-## To do:
-- [ ] A
-- [ ] lot
+Custom GROBID server:
+
+```python
+extractor = GrobidArticleExtractor(grobid_url="http://your-grobid-server:8070")
+```
+### Example NoteBook
+
+Check out the [example notebook](https://github.com/sensein/GrobidArticleExtractor/blob/dev/examples/example.ipynb)  for a step-by-step guide on how to run it.
+
+## Output Structure
+
+The extracted content is organized as follows:
+
+```python
+{
+   'metadata': {
+      'title': 'Paper Title',
+      'authors': ['Author 1', 'Author 2'],
+      'abstract': 'Paper abstract...',
+      'publication_date': '2023'
+   },
+   'sections': [
+      {
+         'heading': 'Introduction',
+         'content': ['Paragraph 1...', 'Paragraph 2...'],
+         'subsections': [
+            {
+               'heading': 'Background',
+               'content': ['Subsection content...']
+            }
+         ]
+      }
+      # More sections...
+   ]
+}
+```
+
+## Project Structure
+
+The project is organized into two main files:
+
+- `app.py` - Contains the core `GrobidArticleExtractor` class with all the PDF processing and content extraction
+  functionality
+- `cli.py` - Contains the command-line interface implementation using Click
+
+## Error Handling
+
+The tool includes comprehensive error handling for common scenarios:
+
+- PDF file not found
+- GROBID service unavailable
+- XML parsing errors
+- Invalid content structure
+
+All errors are logged with appropriate messages using Python's logging module.
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## License
+
+MIT License
